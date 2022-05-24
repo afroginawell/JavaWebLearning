@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing : border-box;
+    font-family: 'Microsoft YaHei UI', 微软雅黑;
+    overflow: hidden;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+section{
+    top:0;
+}
+
+.square {
+    position: relative;
+    width: 700px;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square span {
+    position: absolute;
+    transform:translate(-50%,-50%);
+    width: 90%;
+    height: 90%;
+    border: 2px solid #fff;
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    transition: 0.5s;
+    animation: animate 6s linear infinite;
+    overflow:visible;
+
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.square span:nth-child(1) {
+    animation: animate 6s linear infinite;
+}
+
+.square span:nth-child(2) {
+    animation: animate 4s linear infinite;
+}
+
+.square span:nth-child(3) {
+    animation: animate2 10s linear infinite;
+}
+
+.content {
+    position: relative;
+    padding: 40px 60px;
+    color: #fff;
+    text-align: center;
+    transition: 0.5s;
+    z-index: 1000;
+}
+
+.content h1{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.content .user_name{
+    font-size:30px;
+}
+
+.content .user_name input{
+    height:44px;
+    padding:7px;
+    font-size:20px;
+    border-radius: 5px;
+    vertical-align: center;
+}
+
+.content .password{
+    font-size:30px;
+}
+
+.content .password input{
+    height:44px;
+    padding:7px;
+    font-size:20px;
+    border-radius: 5px;
+}
+
+.content .loginButton {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    border: 2px solid #fff;
+    padding: 12px 36px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 73% 27% 44% 56% / 49% 44% 56% 51%;
+    background: #000;
+    font-size: 30px;
+}
+.content .loginButton:hover {
+    background: #fff;
+    color: #333;
+    cursor:pointer;
+}
+.content p{
+    margin-top:20px;
+}
+
+#star{
+    width: 30px;
+    height: 30px;
+    background: url("../images/star.png") no-repeat;
+    position: absolute;
+    background-size:100% 100%;
+    animation: flash 1s alternate infinite;
+}
+
+@keyframes flash {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+#star:hover{
+    transform: scale(3, 3) rotate(180deg) !important;
+    transition: all 1s;
+}
